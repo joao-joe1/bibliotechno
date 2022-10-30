@@ -1,0 +1,73 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+div.form {
+    width: 100%;
+    height: 139vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.form-container {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 21px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+div.form-container>* {
+    margin: 5px 0;
+}
+
+div.form-container>input {
+    width: 260px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+div.form-container input:focus {
+    outline: 0;
+}
+
+div.form-container>input[type='text'],
+div.form-container>input[type='password'] {
+    height: 25px;
+    font-size: 18px;
+}
+
+span.form-title {
+    font-size: 30px;
+}
+
+div.form-container span.check {
+    font-size: 30px;
+    position: absolute;
+    left: 25px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+div.form-container span.close {
+    font-size: 30px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    cursor: pointer;
+}
+
+div.form-container input.form-icon {
+    border: 0
+}
