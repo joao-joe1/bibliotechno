@@ -1,0 +1,99 @@
+:root {
+  --background-color: #FFF;
+  --text-color: rgb(0, 0, 0);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13pt;
+  width: 90vw;
+  height: 93vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  max-width: 430px;
+  padding: 20px 35px 20px 35px;
+  border: 1px solid #ddd;
+  box-shadow: 10px 10px 5px #ddd;
+  border-radius: 8px;
+}
+
+.logo {
+  background: url(../images/ipatinga.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 158px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 950px) {
+  .logo2 {
+    display: none;
+    visibility: hidden;
+  }
+
+  .login {
+    width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 13pt;
+  }
+
+  .login {
+    margin-left: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  h4 {
+    font-size: 16pt;
+  }
+
+  .login {
+    margin-top: 30px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 230px) {
+  .login {
+    margin-right: 20px;
+  }
+}
+
+.themes {
+  margin-top: 55%;
+  margin-right: 15%;
+}
+
+.fundo {
+  transform: rotate(-30deg);
+}
+
+.fundo>i {
+  color: rgb(97, 97, 97);
+  transition: 1s;
+  padding: 0 1px;
+  user-select: none;
+  cursor: default;
+}
+
+.fundo>i:hover {
+  color: #26a69a;
+  text-shadow: 0 0 120px #26a69a;
+}
