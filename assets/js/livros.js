@@ -25,11 +25,11 @@ document.querySelector("#app").innerHTML = `
             <a class="brand-logo">Bibliotechno</a>
             
             <ul class="right hide-on-med-and-down">
-                <li><a href="menu.html"><i class="material-icons right">menu</i>Início</a></li>
-                <li><a href="cadastro2.html"><i class="material-icons right">add_to_photos</i>Cadastrar Livros</a></li>
-                <li><a href="livros_pendente.html"><i class="material-icons right">collections_bookmark</i>Controle de Livros</a></li>
+                <li><a href="menu.php"><i class="material-icons right">menu</i>Início</a></li>
+                <li><a href="cadastro.php"><i class="material-icons right">add_to_photos</i>Cadastrar Livros</a></li>
+                <li><a href="livros_pendente.php"><i class="material-icons right">collections_bookmark</i>Controle de Livros</a></li>
                 <li><a href="#!"><i class="material-icons right">add_to_photos</i>Cadastrar Aluno</a></li>
-                <li class="active"><a href="login.html"><i class="material-icons right">cancel</i>Sair</a></li>
+                <li class="active"><a href="login.php"><i class="material-icons right">cancel</i>Sair</a></li>
             </ul>
             
     </nav>
@@ -37,7 +37,7 @@ document.querySelector("#app").innerHTML = `
   <li>
     <div class="user-view">
       <div class="background">
-        <img src="assets/images/backgroundsidenav.png" style="height: 100%;">
+        <img src="assets/images/sidenav-background.png" style="height: 100%;">
       </div>
       <a href="#user"><img class="circle" src="assets/images/user.png"></a>
       <a href="#name"><span class="white-text name">Usuário</span></a>
@@ -99,5 +99,5 @@ document.querySelector("#app").innerHTML = `
     </div>
   </div>
   <ul class="collection">
-    ${createBook("Viagem ao Centro da Terra", "Jules Verne", "8537815519", "Ficção Científica", "sobre_livro.html", "red")}, ${createBook("test5", "test6", "test7", "test8", "seila", "green")}
+    ${createBook("Viagem ao Centro da Terra", "Jules Verne", "8537815519", "Ficção Científica", "sobre_livro.php", "red")}, ${createBook("test5", "test6", "test7", "test8", "seila", "green")}
   </ul> `
