@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   include("verificar_auth.php");
 ?>
 
@@ -46,10 +48,10 @@
             <a class="brand-logo">Bibliotechno</a">
 
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="menu.php"><i class="material-icons right">menu</i>Início</a></li>
+                    <li><a href="inicio.php"><i class="material-icons right">menu</i>Início</a></li>
                     <li><a href="livros.php"><i class="material-icons right">book</i>Todos os Livros</a></li>
                     <li><a href="#!"><i class="material-icons right">add_to_photos</i>Cadastrar Aluno</a></li>
-                    <li><a href="cadastro.php"><i class="material-icons right">collections_bookmark</i>Cadastrar Livros</a></li>
+                    <li><a href="cadastro_livros.php"><i class="material-icons right">collections_bookmark</i>Cadastrar Livros</a></li>
                     <li class="active"><a href="login.php"><i class="material-icons right">cancel</i>Sair</a></li>
                 </ul>
 

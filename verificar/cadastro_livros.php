@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   include("verificar_auth.php");
 ?>
 
@@ -17,7 +19,7 @@
 
   <script src="assets/js/materialize.js"></script>
 
-  <title>Cadastro</title>
+  <title>Bibliotechno - Cadastro</title>
 
   <style>
     .footer-copyright {
@@ -113,74 +115,23 @@
       }
     }
   </style>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems, options);
-    });
-
-    $(document).ready(function () {
-      $('.sidenav-trigger').sidenav();
-    });
-
-
-    $(function () {
-      $(".button-collapse").sideNav();
-    });
-  </script>
 </head>
+
 </body>
-<nav>
-  <div class="nav-wrapper blue">
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <a class="brand-logo">Bibliotechno</a">
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a class="brand-logo">Bibliotechno</a">
 
-      <ul class="right hide-on-med-and-down">
-        <li><a href="menu.php"><i class="material-icons right">menu</i>Início</a></li>
-        <li><a href="livros.php"><i class="material-icons right">book</i>Todos os Livros</a></li>
-        <li><a href="#!"><i class="material-icons right">add_to_photos</i>Cadastrar Aluno</a></li>
-        <li><a href="livros_pendente.php"><i class="material-icons right">collections_bookmark</i>Controle de Livros</a></li>
-        <li class="active"><a href="login.php"><i class="material-icons right">cancel</i>Sair</a></li>
-    </ul>
-
-</nav>
-<ul id="slide-out" class="sidenav">
-  <li>
-    <div class="user-view">
-      <div class="background">
-        <img src="assets/images/sidenav-background.png" style="height: 100%;">
-      </div>
-      <a href="#user"><img class="circle" src="assets/images/user.png"></a>
-      <a href="#name"><span class="white-text name">Usuário</span></a>
-      <a href="#admin"><span class="white-text email">@admin</span></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="inicio.php"><i class="material-icons right">menu</i>Início</a></li>
+          <li><a href="livros.php"><i class="material-icons right">book</i>Todos os Livros</a></li>
+          <li><a href="#!"><i class="material-icons right">add_to_photos</i>Cadastrar Aluno</a></li>
+          <li><a href="livros_pendente.php"><i class="material-icons right">collections_bookmark</i>Controle de Livros</a></li>
+          <li class="active"><a href="login.php"><i class="material-icons right">cancel</i>Sair</a></li>
+      </ul>
     </div>
-  </li>
-  <li>
-    <div class="divider"></div>
-  </li>
-  <li><a href="#!"><i class="material-icons">book</i>Todos Os Livros</a></li>
-  <li>
-    <div class="divider"></div>
-  </li>
-  <li><a href="#!"><i class="material-icons">add_to_photos</i>Cadastrar Livros</a></li>
-  <li>
-    <div class="divider"></div>
-  </li>
-  <li><a href="#!"><i class="material-icons">collections_bookmark</i>Controle de Livros</a></li>
-  <li><a class="subheader"></a></li>
-  <li><a class="subheader"></a></li>
-  <li><a class="subheader"></a></li>
-  <li><a class="subheader"></a></li>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <li><a href="#!">Sair</a></li>
-</ul>
-
-<br>
+  </nav>
 
 </div>
 <fieldset>

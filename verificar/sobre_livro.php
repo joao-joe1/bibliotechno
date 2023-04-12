@@ -15,23 +15,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Document</title>
   <script src="assets/js/leia_mais.js"></script>
-</head>
 
-<body>
-  <style>
-     ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    border: 1px solid #ffffff;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(60deg, #22BDA1, #22BDBA);
-    border-radius: 50px;
-  }
-  </style>
   <style>
     body {
       text-align: center;
@@ -41,14 +25,32 @@
     #mais {
       display: none
     }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      border: 1px solid #ffffff;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(60deg, #22BDA1, #22BDBA);
+      border-radius: 50px;
+    }
   </style>
+</head>
+
+<body>
   <header class="pb-3 mb-0 border-bottom">
-    <title></title>
     <path fill-rule="evenodd" clip-rule="evenodd" d="" fill="currentColor"></path>
     </svg>
     <span class="fs-4" style="font-size: 14pt;"><br><b>Viagem ao Centro da Terra</b> Capa dura - 14 abril 2016</span>
     </a>
-  </header> <br>
+  </header>
+  
+  <br>
+
   <div class="row">
     <div class="col s12 m6">
 

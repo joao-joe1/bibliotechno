@@ -1,24 +1,5 @@
-<?php
-session_start();
-
-include('./conexao.php');
-
-if (isset($_POST['user']) && isset($_POST['password'])) {
-    $user = trim($_POST['user']);
-    $password = trim($_POST['password']);
-
-    $query = $mysqli->query("SELECT * FROM `administrador` WHERE `usuario` = '" . $user . "' AND `senha` = '" . $password . "';");
-
-    if (mysqli_num_rows($query) != 0) {
-        $_SESSION['authenticated'] = true;
-
-        header('Location: ./inicio.php');
-    }
-}
-?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-Br">
 
 <head>
     <meta charset="UTF-8">
@@ -27,17 +8,15 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
 
     <!-- Materialize -->
     <link rel="stylesheet" href="assets/css/materialize.css">
-
     <!-- Materialize  JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+    <script src="assets/js/materialize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <!-- jQuery -->
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/images/ipatinga.png" type="image/x-icon">
 
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -47,12 +26,12 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <title>Bibliotechno - Autenticação</title>
+    <title>Login</title>
 </head>
 
 <body>
     <div class="logo2">
-        <img src="./assets/images/login.svg" alt="" style="width:700px">
+        <img src="./assets/images/login2.svg" alt="" style="width:700px">
     </div>
 
     <div class="login">
@@ -99,19 +78,33 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
         </form>
     </div>
 
+    <!-- <script>
+        function autenticacao() {
+            var usuario = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            if (usuario == "admin" && senha == "admin") {
+                M.toast({
+                    html: 'Autenticação realizada com sucesso!',
+                    classes: 'rounded'
+                })
+                location.href = "menu.php";
+
+            } else
+                if (usuario != "admin" && senha != "admin") {
+                    M.toast({
+                        html: 'Autenticação falhou! (Usuário ou senha incorreto.)',
+                        classes: 'rounded'
+                    })
+                }
+        }
+    </script> -->
+
     <script>
         M.AutoInit();
-
-        var user = '<?php echo $user; ?>';
-        var password = '<?php echo $password; ?>';
-
-        if (user && password) {
-            M.toast({
-                html: 'Autenticação falhou! (Usuário ou senha incorreto.)',
-                classes: 'rounded'
-            });
-        }
     </script>
+
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
