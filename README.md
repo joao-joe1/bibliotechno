@@ -8,7 +8,7 @@
 
 ### Front-end
 
-👨‍💻A parte do front-end foi cuidada por mim e meus colegas Windson e Victor. Trabalhamos principalmente com HTML, CSS e JavaScript, além de frameworks como Bootstrap e Materialize. Victor também contribuiu para o front-end com sua experiência em HTML e CSS.
+👨‍💻A parte do front-end foi cuidada por mim e meus colegas Windson e Victor. Trabalhamos principalmente com HTML, CSS e JavaScript, além de frameworks como Bootstrap e Materialize.
 
 ### Back-end
 
