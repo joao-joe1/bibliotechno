@@ -77,7 +77,6 @@ include("verificar_auth.php");
                 <li><a href="livros.php"><i class="material-icons right">book</i>Todos os Livros</a></li>
                 <li><a href="cadastro_livros.php"><i class="material-icons right">add_to_photos</i>Cadastrar Livros</a></li>
                 <li><a href="livros_pendente.php"><i class="material-icons right">collections_bookmark</i>Controle de Livros</a></li>
-                <li><a href="#!"><i class="material-icons right">add_to_photos</i>Cadastrar Aluno</a></li>
                 <li class="active"><a href="login.php"><i class="material-icons right">cancel</i>Sair</a></li>
             </ul>
     </nav>

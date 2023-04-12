@@ -4,12 +4,14 @@ session_start();
 include("verificar_auth.php");
 include("conexao.php");
 
-// $_POST['nome']
-// $_POST['codigo']
-if (isset($_POST['codigo'])) {
-  $result = $mysqli->query("SELECT * FROM livro WHERE `codigo` LIKE '${$_POST['codigo']}';");
-} else if (isset($_POST['nome'])) {
-  $result = $mysqli->query("SELECT * FROM livro WHERE `nome` LIKE '${$_POST['nome']}';");
+if (isset($_GET['codigo'])) {
+  $codigo = $_GET['codigo'];
+  $result = $mysqli->query("SELECT * FROM `livro` WHERE `codigo` LIKE '%$codigo%' ORDER BY `codigo` ASC;");
+} else if (isset($_GET['nome'])) {
+  $nome = $_GET['nome'];
+  $result = $mysqli->query("SELECT * FROM `livro` WHERE `nome` LIKE '%$nome%' ORDER BY `codigo` ASC;");
+} else {
+  $result = $mysqli->query("SELECT * FROM `livro` ORDER BY `codigo` ASC;");
 }
 ?>
 
@@ -74,7 +76,6 @@ if (isset($_POST['codigo'])) {
         <li><a href="inicio.php"><i class="material-icons right">menu</i>Início</a></li>
         <li><a href="cadastro_livros.php"><i class="material-icons right">add_to_photos</i>Cadastrar Livros</a></li>
         <li><a href="livros_pendente.php"><i class="material-icons right">collections_bookmark</i>Controle de Livros</a></li>
-        <li><a href="#!"><i class="material-icons right">add_to_photos</i>Cadastrar Aluno</a></li>
         <li class="active"><a href="login.php"><i class="material-icons right">cancel</i>Sair</a></li>
       </ul>
   </nav>
@@ -95,18 +96,23 @@ if (isset($_POST['codigo'])) {
 
   <ul class="collection">
     <?php
-    for ($i = 0; $i < 50; $i++) {
-      echo "<li class='collection-item avatar'>
-      <i class='material-icons circle ${cor}'>book</i>
-      <span class='title'> <b>Nome do Livro:</b> ${livro}</span>
-      <p>
-        <b>Autor:</b> ${autor} <br>
-        <b>Código do Livro:</b> ${codigo} (ISBN) <br>
-        <b>Gênero:</b> ${genero}
-      </p>
-
-      <a href='./ver_livro.php?id=${codigo}' class='secondary-content'><i class='material-icons'>live_help</i></a>
-    </li>";
+      for ($read = 1; $livro = mysqli_fetch_array($result); $read++) {
+        $nome = $livro['nome'];
+        $autor = $livro['autor'];
+        $codigo = $livro['codigo'];
+        $genero = $livro['genero'];
+  
+        echo "<li class='collection-item avatar'>
+        <i class='material-icons circle red'>book</i>
+        <span class='title'> <b>Nome do Livro:</b> ${nome}</span>
+        <p>
+          <b>Autor:</b> ${autor} <br>
+          <b>Código do Livro:</b> ${codigo} (ISBN) <br>
+          <b>Gênero:</b> ${genero}
+        </p>
+  
+        <a href='./ver_livro.php?id=${codigo}' class='secondary-content'><i class='material-icons'>live_help</i></a>
+      </li>";
     }
     ?>
     <ul>

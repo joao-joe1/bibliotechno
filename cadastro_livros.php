@@ -2,6 +2,18 @@
   session_start();
 
   include("verificar_auth.php");
+  include("conexao.php");
+
+  if (isset($_POST['titulo'])) {
+    $nome = $_POST['titulo'];
+    $codigo = $_POST['codigo'];
+    $descricao = $_POST['descricao'];
+    $autor = $_POST['autor'];
+    $genero = $_POST['genero'];
+
+    $mysqli->query("insert into livro values ('0', '$codigo', '$descricao', '$genero', '$nome', '$autor')");
+    header('Location: ./livros.php');
+  }
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +29,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2? família=Poppins:wght@700&display=swap" rel="stylesheet">
 
-  <script src="assets/js/materialize.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <title>Bibliotechno - Cadastro</title>
 
@@ -126,26 +139,25 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="inicio.php"><i class="material-icons right">menu</i>Início</a></li>
           <li><a href="livros.php"><i class="material-icons right">book</i>Todos os Livros</a></li>
-          <li><a href="#!"><i class="material-icons right">add_to_photos</i>Cadastrar Aluno</a></li>
           <li><a href="livros_pendente.php"><i class="material-icons right">collections_bookmark</i>Controle de Livros</a></li>
           <li class="active"><a href="login.php"><i class="material-icons right">cancel</i>Sair</a></li>
       </ul>
     </div>
   </nav>
-
 </div>
+
 <fieldset>
   <h3 class="center-align">
-    <img src="assets/images/png.png">
+    <img src="assets/images/cadastro.png">
   </h3>
-  <form class="col s12">
+  <form class="col s12" method="post" action="">
     <div class="row">
       <div class="input-field col s6">
-        <input id="titulo" type="text" class="validate">
+        <input id="titulo" name="titulo" type="text" class="validate">
         <label for="titulo">Título</label>
       </div>
       <div class="input-field col s6">
-        <select>
+        <select name="genero">
           <option value="" disabled selected>Gêneros</option>
           <option value="1">Ficção</option>
           <option value="2">Romance</option>
@@ -162,12 +174,16 @@
         <label>Escolha um Gênero</label>
       </div>
       <div class="input-field col s6">
-        <input id="password" type="text" class="validate">
-        <label for="password">Código do Livro</label>
+        <input id="codigo" name="codigo" type="text" class="validate">
+        <label for="codigo">Código do Livro</label>
       </div>
       <div class="input-field col s6">
-        <input id="autor" type="text" class="validate">
+        <input id="autor" name="autor" type="text" class="validate">
         <label for="autor">Autor</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="descricao" name="descricao" type="text" class="validate">
+        <label for="descricao">Descrição</label>
       </div>
     </div>
     </div>
